@@ -7,6 +7,9 @@
 
     <title>HomestayBooking</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.2/dist/flatly/bootstrap.min.css"
+        integrity="sha256-GBSk3SnkLpARJ0imUeiqf7XvgjBDjTIZTVUNoJGyGT4=" crossorigin="anonymous">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
