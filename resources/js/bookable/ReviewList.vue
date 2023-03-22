@@ -10,10 +10,9 @@
                 :key="index"
             >
                 <div class="row pt-4">
-                    <div class="col-md-6">Aaron Ferguson</div>
+                    <div class="col-md-6">Aaron Walker</div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        {{ review.rating }}
-                        <star-rating></star-rating>
+                        <star-rating :rating="review.rating" class="fa-lg"></star-rating>
                     </div>
                 </div>
                 <div class="row">
