@@ -11,7 +11,10 @@
             >
                 <div class="row pt-4">
                     <div class="col-md-6">Aaron Ferguson</div>
-                    <div class="col-md-6 d-flex justify-content-end">{{ review.rating }}</div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                        {{ review.rating }}
+                        <star-rating></star-rating>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">{{ review.created_at | fromNow }}</div>
