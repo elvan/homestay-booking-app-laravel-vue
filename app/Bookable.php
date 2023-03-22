@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Booking;
+use App\Review;
 use Illuminate\Database\Eloquent\Model;
 
 class Bookable extends Model
@@ -10,6 +11,11 @@ class Bookable extends Model
     public function bookings()
     {
         return $this->hasMany(Booking::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
     public function availableFor($from, $to): bool
