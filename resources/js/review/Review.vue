@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { is404 } from './../shared/utils/response';
+import { is404, is422 } from './../shared/utils/response';
 
 export default {
     data() {
@@ -77,6 +77,7 @@ export default {
             loading: false,
             booking: null,
             error: false,
+            errors: null,
         };
     },
     created() {
@@ -124,11 +125,24 @@ export default {
     },
     methods: {
         submit() {
+            this.errors = null;
             this.loading = true;
+
             axios
                 .post(`/api/reviews`, this.review)
                 .then((response) => console.log(response))
-                .catch((err) => (this.error = true))
+                .catch((err) => {
+                    if (is422(err)) {
+                        const errors = err.response.data.errors;
+
+                        if (errors['content'] && 1 === _.size(errors)) {
+                            this.errors = errors;
+                            return;
+                        }
+                    }
+
+                    this.error = true;
+                })
                 .then(() => (this.loading = false));
         },
     },
