@@ -39,10 +39,11 @@ export default {
             }
         },
         addToBasket({ commit, state }, payload) {
+            // context.state, context.commit
             commit('addToBasket', payload);
             localStorage.setItem('basket', JSON.stringify(state.basket));
         },
-        removeFromBasket() {
+        removeFromBasket({ commit, state }, payload) {
             commit('removeFromBasket', payload);
             localStorage.setItem('basket', JSON.stringify(state.basket));
         },
