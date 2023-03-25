@@ -45,13 +45,6 @@
                         >Register</router-link
                     >
                 </div>
-
-                <div>
-                    Forgotten password?
-                    <router-link :to="{ name: 'home' }" class="font-weight-bold"
-                        >Reset password</router-link
-                    >
-                </div>
             </form>
         </div>
     </div>
