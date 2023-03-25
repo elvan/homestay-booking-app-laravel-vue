@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg bg-white border-bottom navbar-light">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary border-bottom">
             <router-link class="navbar-brand mr-auto" :to="{ name: 'home' }"
                 >HomestayBooking</router-link
             >
