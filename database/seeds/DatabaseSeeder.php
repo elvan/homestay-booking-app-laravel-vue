@@ -3,6 +3,7 @@
 use App\Bookable;
 use App\Booking;
 use App\Review;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        factory(User::class, 100)->create();
+
         factory(Bookable::class, 100)->create();
 
         Bookable::all()->each(function (Bookable $bookable) {
